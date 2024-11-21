@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.webview.ui.components.MainContent
 import com.example.webview.ui.components.WebViewPage
 import com.example.webview.ui.theme.WebVIewTheme
 
@@ -19,14 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            WebVIewTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    WebViewPage(
-                        url = "https://www.google.com",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            MainContent()
         }
     }
 }
