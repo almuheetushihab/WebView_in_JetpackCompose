@@ -17,7 +17,7 @@ fun MainContent() {
         topBar = {
             TopAppBar(
                 title = { Text("GFG | WebView", color = Color.White) },
-               colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Gray)) },
+               colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Blue)) },
 
         content = {
             WebViewPage(
