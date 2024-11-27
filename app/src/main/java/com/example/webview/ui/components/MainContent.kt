@@ -9,21 +9,23 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.example.webview.ui.screen.loginscreen.LoginScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainContent() {
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("GFG | WebView", color = Color.White) },
-               colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Blue)) },
-
-        content = {
-            WebViewPage(
-                url = "https://www.geeksforgeeks.org",
-                modifier = Modifier.padding(it)
-            )
-        }
-    )
+    LoginScreen()
+//    Scaffold(
+//        topBar = {
+//            TopAppBar(
+//                title = { Text("GFG | WebView", color = Color.White) },
+//               colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Blue)) },
+//
+//        content = {
+//            WebViewPage(
+//                url = "https://www.geeksforgeeks.org",
+//                modifier = Modifier.padding(it)
+//            )
+//        }
+//    )
 }
