@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -23,6 +22,7 @@ import com.example.webview.ui.screen.infocardscreen.components.AddOptionsCompone
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCardComponent
+import com.example.webview.ui.screen.infocardscreen.components.SubTotalComponent
 import com.example.webview.ui.screen.infocardscreen.components.TextArea
 import com.example.webview.ui.screen.infocardscreen.components.TextTitle
 
@@ -85,6 +85,14 @@ fun InfoCardScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        SubTotalComponent(
+            title = "Sub-Total",
+            productInfo = "0 Products",
+            amount = "৳0.00",
+            modifier = Modifier
+                .width(500.dp)
+        )
+
         AddOptionsComponent(
             onCouponCodeClick = { },
             onStoreCreditClick = { },
@@ -109,6 +117,8 @@ fun InfoCardScreen() {
                 .width(800.dp)
                 .wrapContentHeight(),
         )
+
+
     }
 }
 
