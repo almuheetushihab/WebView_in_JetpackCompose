@@ -22,18 +22,19 @@ import com.example.webview.ui.components.PreviewAppScreen
 @Composable
 fun SubTotalComponent(
     title: String,
-    productInfo: String,
+    productCount: String,
     amount: String,
+    backgroundColor: Color,
     modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier
             .background(
-                color = Color(0xFFF5F5F5),
+                backgroundColor,
                 shape = RoundedCornerShape(8.dp)
             )
             .border(
-                1.dp, color = Color(0xFFDDDDDD),
+                .5.dp, color = Color(0xFFDDDDDD),
                 shape = RoundedCornerShape(8.dp)
             )
             .padding(
@@ -62,7 +63,7 @@ fun SubTotalComponent(
                 Box(
                     modifier = Modifier
                         .border(
-                            1.dp, color = Color(0xFFDDDDDD),
+                            .5.dp, color = Color(0xFFDDDDDD),
                             shape = RoundedCornerShape(4.dp)
                         )
                         .padding(
@@ -71,7 +72,7 @@ fun SubTotalComponent(
                         )
                 ) {
                     Text(
-                        text = productInfo,
+                        text = "$productCount Products",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
                     )
@@ -82,8 +83,7 @@ fun SubTotalComponent(
                 text = amount,
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = MaterialTheme.typography.bodyMedium.fontWeight,
-
-                )
+            )
         }
     }
 }
@@ -93,7 +93,8 @@ fun SubTotalComponent(
 fun SubTotalComponentPreview() {
     SubTotalComponent(
         title = "Sub-Total",
-        productInfo = "0 Products",
-        amount = "৳0.00"
+        productCount = "0",
+        amount = "৳0.00",
+        backgroundColor = Color(0xFFFFF8F8)
     )
 }

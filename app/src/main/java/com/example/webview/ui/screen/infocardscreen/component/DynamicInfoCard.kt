@@ -3,7 +3,7 @@ package com.example.webview.ui.screen.infocardscreen.component
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -20,14 +20,13 @@ import com.example.webview.ui.components.PreviewAppScreen
 @Composable
 fun DynamicInfoCard(
     modifier: Modifier = Modifier,
-    text: String,
+    titleName: String,
     value: String,
-    backgroundColor: Color = Color(0xFFFFF8F8),
-    borderColor: Color = Color(0xFFFFC1C1),
-    textColor: Color = Color(0xFFFF0000),
-    valueTextColor: Color = Color(0xFFFF0000),
+    backgroundColor: Color,
+    borderColor: Color,
+    textColor: Color
 ) {
-    Box(
+    Column(
         modifier = modifier
             .padding(8.dp)
             .border(1.dp, borderColor, shape = RoundedCornerShape(8.dp))
@@ -41,14 +40,14 @@ fun DynamicInfoCard(
         ) {
 
             Text(
-                text = text,
+                text = titleName,
                 color = textColor,
                 style = MaterialTheme.typography.bodyMedium
             )
 
             Text(
                 text = value,
-                color = valueTextColor,
+                color = textColor,
                 style = MaterialTheme.typography.bodyMedium
             )
         }
@@ -59,12 +58,11 @@ fun DynamicInfoCard(
 @Composable
 fun DynamicInfoCardPreview() {
     DynamicInfoCard(
-        text = "Due",
+        titleName = "Due",
         value = "৳2,000.00",
         backgroundColor = Color(0xFFFFF8F8),
         borderColor = Color(0xFFFFC1C1),
-        textColor = Color(0xFFFF0000),
-        valueTextColor = Color(0xFFFF0000)
+        textColor = Color(0xFFFF0000)
     )
 }
 

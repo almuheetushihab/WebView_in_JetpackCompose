@@ -7,18 +7,16 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 import com.example.webview.ui.screen.infocardscreen.component.AddOptionsComponent
+import com.example.webview.ui.screen.infocardscreen.component.DynamicInfoCard
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
 import com.example.webview.ui.screen.infocardscreen.component.InfoCardComponent
@@ -87,8 +85,9 @@ fun InfoCardScreen() {
 
         SubTotalComponent(
             title = "Sub-Total",
-            productInfo = "0 Products",
+            productCount = "0 Products",
             amount = "৳0.00",
+            backgroundColor = Color(0xFFFFF8F8),
             modifier = Modifier
                 .width(500.dp)
         )
@@ -109,6 +108,24 @@ fun InfoCardScreen() {
             modifier = Modifier
                 .width(800.dp)
                 .wrapContentHeight(),
+        )
+
+        DynamicInfoCard(
+                titleName = "Due",
+                value = "৳2,000.00",
+                backgroundColor = Color(0xFFFFF8F8),
+                borderColor = Color(0xFFFFC1C1),
+                textColor = Color(0xFFFF0000),
+            modifier = Modifier.width(800.dp)
+        )
+
+        DynamicInfoCard(
+            titleName = "Change Return",
+            value = "৳80.00",
+            backgroundColor = Color(0xFFFFF8E1),
+            borderColor = Color(0xFFFFD180),
+            textColor = Color(0xFFFF6F00),
+            modifier = Modifier.width(800.dp)
         )
 
 
