@@ -1,4 +1,4 @@
-package com.example.webview.ui.screen.infocardscreen.components
+package com.example.webview.ui.screen.infocardscreen.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -16,7 +16,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 
@@ -26,18 +25,15 @@ fun SubTotalComponent(
     productInfo: String,
     amount: String,
     modifier: Modifier = Modifier,
-    backgroundColor: Color = Color(0xFFF5F5F5),
-    borderColor: Color = Color(0xFFDDDDDD)
 ) {
     Box(
         modifier = modifier
-            .fillMaxWidth()
             .background(
-                backgroundColor,
+                color = Color(0xFFF5F5F5),
                 shape = RoundedCornerShape(8.dp)
             )
             .border(
-                1.dp, borderColor,
+                1.dp, color = Color(0xFFDDDDDD),
                 shape = RoundedCornerShape(8.dp)
             )
             .padding(
@@ -57,7 +53,7 @@ fun SubTotalComponent(
 
                 Text(
                     text = title,
-                    fontWeight = FontWeight.Bold,
+                    fontWeight = MaterialTheme.typography.bodyMedium.fontWeight,
                     style = MaterialTheme.typography.bodyMedium
                 )
 
@@ -66,7 +62,7 @@ fun SubTotalComponent(
                 Box(
                     modifier = Modifier
                         .border(
-                            1.dp, borderColor,
+                            1.dp, color = Color(0xFFDDDDDD),
                             shape = RoundedCornerShape(4.dp)
                         )
                         .padding(
@@ -85,8 +81,9 @@ fun SubTotalComponent(
             Text(
                 text = amount,
                 style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
-            )
+                fontWeight = MaterialTheme.typography.bodyMedium.fontWeight,
+
+                )
         }
     }
 }

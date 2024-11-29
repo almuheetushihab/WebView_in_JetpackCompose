@@ -1,4 +1,4 @@
-package com.example.webview.ui.screen.infocardscreen.components
+package com.example.webview.ui.screen.infocardscreen.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.material3.Divider
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -30,8 +28,6 @@ fun AddOptionsComponent(
 ) {
     Column(
         modifier = modifier
-            .fillMaxWidth()
-            .wrapContentHeight()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -83,55 +79,55 @@ fun AddOptionsComponent(
 
         }
 
-        HorizontalDivider(
-            modifier = Modifier.fillMaxWidth(),
-            thickness = 0.5.dp,
-            color = MaterialTheme.colorScheme.outline
-        )
-
-        TextValue(
-            text = "Discount",
-            value = "- ৳0.00",
-        )
-
-        HorizontalDivider(
-            modifier = Modifier.fillMaxWidth(),
-            thickness = 0.5.dp,
-            color = MaterialTheme.colorScheme.outline
-        )
-
-        TextValue(
-            text = "VAT",
-            value = "+ ৳0.00",
-        )
-
-        HorizontalDivider(
-            modifier = Modifier.fillMaxWidth(),
-            thickness = 0.5.dp,
-            color = MaterialTheme.colorScheme.outline
-        )
-
-        TextValue(
-            text = "Total",
-            value = "৳0.00"
-        )
-
-        HorizontalDivider(
-            modifier = Modifier.fillMaxWidth(),
-            thickness = 0.5.dp,
-            color = MaterialTheme.colorScheme.outline
-        )
-
-        TextValue(
-            text = "Grand-Total",
-            value = "৳0.00"
-        )
-
-        HorizontalDivider(
-            modifier = Modifier.fillMaxWidth(),
-            thickness = 0.5.dp,
-            color = MaterialTheme.colorScheme.outline
-        )
+//        HorizontalDivider(
+//            modifier = Modifier.fillMaxWidth(),
+//            thickness = 0.5.dp,
+//            color = MaterialTheme.colorScheme.outline
+//        )
+//
+//        TextValue(
+//            text = "Discount",
+//            value = "- ৳0.00",
+//        )
+//
+//        HorizontalDivider(
+//            modifier = Modifier.fillMaxWidth(),
+//            thickness = 0.5.dp,
+//            color = MaterialTheme.colorScheme.outline
+//        )
+//
+//        TextValue(
+//            text = "VAT",
+//            value = "+ ৳0.00",
+//        )
+//
+//        HorizontalDivider(
+//            modifier = Modifier.fillMaxWidth(),
+//            thickness = 0.5.dp,
+//            color = MaterialTheme.colorScheme.outline
+//        )
+//
+//        TextValue(
+//            text = "Total",
+//            value = "৳0.00"
+//        )
+//
+//        HorizontalDivider(
+//            modifier = Modifier.fillMaxWidth(),
+//            thickness = 0.5.dp,
+//            color = MaterialTheme.colorScheme.outline
+//        )
+//
+//        TextValue(
+//            text = "Grand-Total",
+//            value = "৳0.00"
+//        )
+//
+//        HorizontalDivider(
+//            modifier = Modifier.fillMaxWidth(),
+//            thickness = 0.5.dp,
+//            color = MaterialTheme.colorScheme.outline
+//        )
     }
 
 }

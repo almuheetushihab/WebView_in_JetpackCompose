@@ -18,11 +18,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
-import com.example.webview.ui.screen.infocardscreen.components.AddOptionsComponent
+import com.example.webview.ui.screen.infocardscreen.component.AddOptionsComponent
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
-import com.example.webview.ui.screen.infocardscreen.components.InfoCardComponent
-import com.example.webview.ui.screen.infocardscreen.components.SubTotalComponent
+import com.example.webview.ui.screen.infocardscreen.component.InfoCardComponent
+import com.example.webview.ui.screen.infocardscreen.component.SubTotalComponent
 import com.example.webview.ui.screen.infocardscreen.components.TextArea
 import com.example.webview.ui.screen.infocardscreen.components.TextTitle
 
@@ -105,13 +105,6 @@ fun InfoCardScreen() {
         Spacer(modifier = Modifier.height(16.dp))
 
         InfoCardComponent(
-            icon = {
-                Icon(
-                    imageVector = Icons.Outlined.Info,
-                    contentDescription = "Info Icon",
-                    tint = MaterialTheme.colorScheme.onSurface
-                )
-            },
             message = "Close your register to finalize payments and sales of the day",
             modifier = Modifier
                 .width(800.dp)

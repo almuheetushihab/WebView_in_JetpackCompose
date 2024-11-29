@@ -37,7 +37,7 @@ fun DetailsCard(
             horizontalAlignment = Alignment.CenterHorizontally
         ){
 
-            TextValue(
+            KeyValue(
                 text = "Last Opening Float",
                 value = "৳ 555",
             )
@@ -48,7 +48,7 @@ fun DetailsCard(
                 color = MaterialTheme.colorScheme.outline
             )
 
-            TextValue(
+            KeyValue(
                 text = "Branch",
                 value = "Rajshahi Branch",
             )
@@ -59,7 +59,7 @@ fun DetailsCard(
                 color = MaterialTheme.colorScheme.outline
             )
 
-            TextValue(
+            KeyValue(
                 text = "Register",
                 value = "Counter 1"
             )
@@ -70,7 +70,7 @@ fun DetailsCard(
                 color = MaterialTheme.colorScheme.outline
             )
 
-            TextValue(
+            KeyValue(
                 text = "Opening Time",
                 value = "28 Nov 2024, 02:38 pm"
             )

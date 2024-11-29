@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 
 @Composable
-fun TextValue(
+fun KeyValue(
     text: String,
     value: String,
     modifier: Modifier = Modifier
@@ -53,7 +53,7 @@ fun TextValue(
 @PreviewAppScreen
 @Composable
 fun TextValuePreview() {
-    TextValue(
+    KeyValue(
         text = "Last Opening Float",
         value = "৳ 555"
 
