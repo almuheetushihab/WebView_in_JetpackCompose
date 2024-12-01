@@ -1,20 +1,15 @@
 package com.example.webview.ui.screen.infocardscreen.component
 
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.Person
-import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -46,7 +41,6 @@ fun SearchCustomerComponent(
 
     Row(
         modifier = modifier
-            .fillMaxWidth()
             .border(
                 width = 1.dp,
                 color = Color.Gray,
@@ -82,7 +76,7 @@ fun SearchCustomerComponent(
         TextButton(
             onClick = { onButtonClick() },
             modifier = Modifier
-                .defaultMinSize(minWidth = 48.dp, minHeight = 50.dp),
+                .defaultMinSize(minWidth = 48.dp, minHeight = 52.dp),
             shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = MaterialTheme.colorScheme.primary,
