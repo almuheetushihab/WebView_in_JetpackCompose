@@ -7,6 +7,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -16,6 +20,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 import com.example.webview.ui.screen.infocardscreen.component.AddOptionsComponent
+import com.example.webview.ui.screen.infocardscreen.component.ButtonData
+import com.example.webview.ui.screen.infocardscreen.component.ButtonGroupComponent
 import com.example.webview.ui.screen.infocardscreen.component.DynamicInfoCard
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
@@ -139,6 +145,18 @@ fun InfoCardScreen() {
             placeholderText = "Search Customer",
             modifier = Modifier.width(500.dp)
         )
+
+         ButtonGroupComponent(
+             buttons = listOf(
+                 ButtonData(label = "Void", icon = Icons.Default.Delete),
+                 ButtonData(label = "Retrieve Sale", icon = Icons.Default.Refresh),
+                 ButtonData(label = "Park Sale", icon = Icons.Default.Search, isHighlighted = true)
+             ),
+             onButtonClick = { button ->
+                 println("${button.label} button clicked")
+             },
+             modifier = Modifier.width(800.dp)
+         )
 
 
     }
