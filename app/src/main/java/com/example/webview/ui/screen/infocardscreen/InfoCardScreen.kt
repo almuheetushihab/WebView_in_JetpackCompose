@@ -3,10 +3,13 @@ package com.example.webview.ui.screen.infocardscreen
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Refresh
@@ -36,11 +39,13 @@ import com.example.webview.ui.screen.infocardscreen.components.TextTitle
 fun InfoCardScreen() {
     val textState = rememberSaveable { mutableStateOf("") }
 
+
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
 
 
@@ -152,10 +157,10 @@ fun InfoCardScreen() {
                  ButtonData(label = "Retrieve Sale", icon = Icons.Default.Refresh),
                  ButtonData(label = "Park Sale", icon = Icons.Default.Search, isHighlighted = true)
              ),
-             onButtonClick = { button ->
-                 println("${button.label} button clicked")
-             },
-             modifier = Modifier.width(800.dp)
+                 onButtonClick = { button ->
+                     println("${button.label} button clicked")
+                 },
+             modifier = Modifier.fillMaxWidth()
          )
 
 
