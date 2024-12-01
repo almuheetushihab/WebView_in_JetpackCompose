@@ -20,6 +20,7 @@ import com.example.webview.ui.screen.infocardscreen.component.DynamicInfoCard
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
 import com.example.webview.ui.screen.infocardscreen.component.InfoCardComponent
+import com.example.webview.ui.screen.infocardscreen.component.SearchCustomerComponent
 import com.example.webview.ui.screen.infocardscreen.component.SubTotalComponent
 import com.example.webview.ui.screen.infocardscreen.components.TextArea
 import com.example.webview.ui.screen.infocardscreen.components.TextTitle
@@ -111,11 +112,11 @@ fun InfoCardScreen() {
         )
 
         DynamicInfoCard(
-                titleName = "Due",
-                value = "৳2,000.00",
-                backgroundColor = Color(0xFFFFF8F8),
-                borderColor = Color(0xFFFFC1C1),
-                textColor = Color(0xFFFF0000),
+            titleName = "Due",
+            value = "৳2,000.00",
+            backgroundColor = Color(0xFFFFF8F8),
+            borderColor = Color(0xFFFFC1C1),
+            textColor = Color(0xFFFF0000),
             modifier = Modifier.width(800.dp)
         )
 
@@ -126,6 +127,17 @@ fun InfoCardScreen() {
             borderColor = Color(0xFFFFD180),
             textColor = Color(0xFFFF6F00),
             modifier = Modifier.width(800.dp)
+        )
+
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+
+        SearchCustomerComponent(
+            onSearch = {},
+            onButtonClick = {},
+            placeholderText = "Search Customer",
+            modifier = Modifier.width(500.dp)
         )
 
 
