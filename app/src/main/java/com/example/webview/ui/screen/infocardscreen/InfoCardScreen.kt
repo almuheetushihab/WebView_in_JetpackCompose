@@ -1,5 +1,6 @@
 package com.example.webview.ui.screen.infocardscreen
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 import com.example.webview.ui.screen.infocardscreen.component.AddOptionsComponent
 import com.example.webview.ui.screen.infocardscreen.component.ButtonGroupComponent
+import com.example.webview.ui.screen.infocardscreen.component.CustomMessageBar
 import com.example.webview.ui.screen.infocardscreen.component.DynamicInfoCard
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
@@ -143,22 +145,37 @@ fun InfoCardScreen() {
             onSearch = {},
             onButtonClick = {},
             placeholderText = "Search Customer",
-            modifier = Modifier.width(500.dp)
+            modifier = Modifier.width(500.dp).border(
+                width = 1.dp,
+                color = MaterialTheme.colorScheme.outline,
+                shape = MaterialTheme.shapes.medium
+            )
         )
 
         Spacer(
             modifier = Modifier.height(16.dp)
         )
 
-         ButtonGroupComponent(
-             onVoidClick = {},
-             onRetrieveClick = {},
-             onParkClick = {},
-             voidButtonColor = MaterialTheme.colorScheme.surface,
-             retrieveButtonColor = MaterialTheme.colorScheme.surface,
-             parkButtonColor = MaterialTheme.colorScheme.primary,
-             modifier = Modifier.width(600.dp)
-         )
+        ButtonGroupComponent(
+            onVoidClick = {},
+            onRetrieveClick = {},
+            onParkClick = {},
+            voidButtonColor = MaterialTheme.colorScheme.surface,
+            retrieveButtonColor = MaterialTheme.colorScheme.surface,
+            parkButtonColor = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.width(600.dp)
+        )
+
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+
+        CustomMessageBar(
+            message = "You need to open a register before starting POS operations.",
+            backgroundColor = Color(0xFFFFF4E5),
+            textColor = Color(0xFFB5532C),
+            modifier = Modifier.width(600.dp)
+        )
 
 
     }
