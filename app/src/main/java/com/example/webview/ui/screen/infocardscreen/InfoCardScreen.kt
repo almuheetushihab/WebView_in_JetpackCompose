@@ -9,10 +9,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Refresh
-import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -22,13 +19,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 import com.example.webview.ui.screen.infocardscreen.component.AddOptionsComponent
-import com.example.webview.ui.screen.infocardscreen.component.ButtonData
 import com.example.webview.ui.screen.infocardscreen.component.ButtonGroupComponent
 import com.example.webview.ui.screen.infocardscreen.component.DynamicInfoCard
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
 import com.example.webview.ui.screen.infocardscreen.component.InfoCardComponent
-import com.example.webview.ui.screen.infocardscreen.component.SearchCustomerComponent
+import com.example.webview.ui.screen.infocardscreen.component.SearchCustomer
 import com.example.webview.ui.screen.infocardscreen.component.SubTotalComponent
 import com.example.webview.ui.screen.infocardscreen.components.TextArea
 import com.example.webview.ui.screen.infocardscreen.components.TextTitle
@@ -143,7 +139,7 @@ fun InfoCardScreen() {
             modifier = Modifier.height(16.dp)
         )
 
-        SearchCustomerComponent(
+        SearchCustomer(
             onSearch = {},
             onButtonClick = {},
             placeholderText = "Search Customer",
@@ -155,14 +151,12 @@ fun InfoCardScreen() {
         )
 
          ButtonGroupComponent(
-             buttons = listOf(
-                 ButtonData(label = "Void", icon = Icons.Default.Delete),
-                 ButtonData(label = "Retrieve Sale", icon = Icons.Default.Refresh),
-                 ButtonData(label = "Park Sale", icon = Icons.Default.Search, isHighlighted = true)
-             ),
-                 onButtonClick = { button ->
-                     println("${button.label} button clicked")
-                 },
+             onVoidClick = {},
+             onRetrieveClick = {},
+             onParkClick = {},
+             voidButtonColor = MaterialTheme.colorScheme.surface,
+             retrieveButtonColor = MaterialTheme.colorScheme.surface,
+             parkButtonColor = MaterialTheme.colorScheme.primary,
              modifier = Modifier.width(600.dp)
          )
 
