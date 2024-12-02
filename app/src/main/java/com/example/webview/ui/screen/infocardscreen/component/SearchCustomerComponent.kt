@@ -1,104 +1,98 @@
 package com.example.webview.ui.screen.infocardscreen.component
 
-import androidx.compose.foundation.border
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.defaultMinSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Person
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
-fun SearchCustomerComponent(
+fun SearchCustomer(
     onSearch: (String) -> Unit,
     onButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
     placeholderText: String,
 ) {
-    var searchText by remember { mutableStateOf("") }
+    val searchText = remember { mutableStateOf("") }
 
     Row(
-        modifier = modifier
-            .border(
-                width = 1.dp,
-                color = Color.Gray,
-                shape = RoundedCornerShape(8.dp)
-            ),
+        modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(
-            imageVector = Icons.Outlined.Person,
-            contentDescription = "Search Icon",
-            modifier = Modifier
-                .padding(start = 16.dp)
-                .size(30.dp),
-            tint = Color.Gray
-        )
 
         TextField(
-            value = searchText,
+            value = searchText.value,
             onValueChange = {
-                searchText = it
+                searchText.value = it
                 onSearch(it)
             },
             modifier = Modifier.weight(1f),
-            placeholder = { Text(text = placeholderText, color = Color.Gray) },
+            placeholder = {
+                Text(text = placeholderText)
+            },
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = MaterialTheme.colorScheme.primary
+            ),
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Outlined.Person,
+                    contentDescription = "",
+                    modifier = Modifier.size(24.dp)
+                )
+            },
+            trailingIcon = {
+                Box(
+                    modifier = Modifier
+                        .width(50.dp)
+                        .height(54.dp)
+                        .background(
+                            color = MaterialTheme.colorScheme.primary,
+                            shape = RoundedCornerShape(8.dp)
+                        )
+                        .clickable {
+                            onButtonClick()
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Outlined.Add,
+                        contentDescription = "",
+                        tint = MaterialTheme.colorScheme.onPrimary,
+                        modifier = Modifier.size(24.dp)
+                    )
+                }
+            },
             singleLine = true,
-            colors = TextFieldDefaults.colors(
-                focusedContainerColor = Color.Transparent,
-                unfocusedContainerColor = Color.Transparent,
-                disabledContainerColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-            )
         )
-
-        TextButton(
-            onClick = { onButtonClick() },
-            modifier = Modifier
-                .defaultMinSize(minWidth = 48.dp, minHeight = 52.dp),
-            shape = RoundedCornerShape(8.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.primary,
-                contentColor = Color.White
-            )
-        ) {
-            Icon(
-                imageVector = Icons.Default.Add,
-                contentDescription = "Add Button"
-            )
-        }
     }
 }
-
 @PreviewAppScreen
+@Preview(showBackground = true)
 @Composable
-fun SearchCustomerComponentPreview() {
-    SearchCustomerComponent(
-        onSearch = { },
-        onButtonClick = { },
-        placeholderText = "Search Customer"
+fun SearchCustomerPreview() {
+    SearchCustomer(
+        onSearch = {},
+        onButtonClick = {},
+        placeholderText = "Search Customer",
     )
 }
