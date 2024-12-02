@@ -66,10 +66,12 @@ fun SearchCustomerComponent(
             modifier = Modifier.weight(1f),
             placeholder = { Text(text = placeholderText, color = Color.Gray) },
             singleLine = true,
-            colors = TextFieldDefaults.textFieldColors(
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent,
+                disabledContainerColor = Color.Transparent,
                 focusedIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent,
-                containerColor = Color.Transparent
             )
         )
 
