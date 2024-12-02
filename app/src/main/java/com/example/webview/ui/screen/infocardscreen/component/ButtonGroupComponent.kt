@@ -17,10 +17,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -62,7 +58,7 @@ fun ButtonGroupComponent(
                 contentDescription = "Void",
                 modifier = Modifier.size(18.dp)
             )
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(4.dp))
             Text(text = "Void")
         }
 
@@ -85,7 +81,7 @@ fun ButtonGroupComponent(
                 contentDescription = "",
                 modifier = Modifier.size(18.dp)
             )
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(4.dp))
             Text(text = "Retrieve Sale")
         }
 
@@ -108,7 +104,7 @@ fun ButtonGroupComponent(
                 contentDescription = "Park Sale",
                 modifier = Modifier.size(18.dp)
             )
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(4.dp))
             Text(text = "Park Sale")
         }
     }
