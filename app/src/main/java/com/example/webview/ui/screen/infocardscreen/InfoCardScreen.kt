@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 import com.example.webview.ui.screen.infocardscreen.component.AddOptionsComponent
 import com.example.webview.ui.screen.infocardscreen.component.ButtonGroupComponent
-import com.example.webview.ui.screen.infocardscreen.component.CustomMessageBar
+import com.example.webview.ui.screen.infocardscreen.component.OpenNewRegisterStatusNotifier
 import com.example.webview.ui.screen.infocardscreen.component.DynamicInfoCard
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
@@ -170,7 +170,7 @@ fun InfoCardScreen() {
             modifier = Modifier.height(16.dp)
         )
 
-        CustomMessageBar(
+        OpenNewRegisterStatusNotifier(
             message = "You need to open a register before starting POS operations.",
             backgroundColor = Color(0xFFFFF4E5),
             textColor = Color(0xFFB5532C),

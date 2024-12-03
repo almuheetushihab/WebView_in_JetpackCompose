@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
 
 @Composable
-fun CustomMessageBar(
+fun OpenNewRegisterStatusNotifier(
     message: String,
     backgroundColor: Color,
     textColor: Color,
@@ -41,7 +41,7 @@ fun CustomMessageBar(
 @Preview(showBackground = true)
 @Composable
 fun PreviewCustomMessageBar() {
-    CustomMessageBar(
+    OpenNewRegisterStatusNotifier(
         message = "You need to open a register before starting POS operations.",
         backgroundColor = Color(0xFFFFF4E5),
         textColor = Color(0xFFB5532C)
