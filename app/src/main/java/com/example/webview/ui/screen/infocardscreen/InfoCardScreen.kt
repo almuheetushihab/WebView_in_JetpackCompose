@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -23,9 +25,11 @@ import com.example.webview.ui.screen.infocardscreen.component.AddOptionsComponen
 import com.example.webview.ui.screen.infocardscreen.component.ButtonGroupComponent
 import com.example.webview.ui.screen.infocardscreen.component.OpenNewRegisterStatusNotifier
 import com.example.webview.ui.screen.infocardscreen.component.DynamicInfoCard
+import com.example.webview.ui.screen.infocardscreen.component.EmptyCart
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
 import com.example.webview.ui.screen.infocardscreen.component.InfoCardComponent
+import com.example.webview.ui.screen.infocardscreen.component.ProductCard
 import com.example.webview.ui.screen.infocardscreen.component.SearchCustomer
 import com.example.webview.ui.screen.infocardscreen.component.SubTotalComponent
 import com.example.webview.ui.screen.infocardscreen.components.TextArea
@@ -166,9 +170,7 @@ fun InfoCardScreen() {
             modifier = Modifier.width(600.dp)
         )
 
-        Spacer(
-            modifier = Modifier.height(16.dp)
-        )
+        Spacer(modifier = Modifier.height(16.dp))
 
         OpenNewRegisterStatusNotifier(
             message = "You need to open a register before starting POS operations.",
@@ -177,6 +179,26 @@ fun InfoCardScreen() {
             modifier = Modifier.width(600.dp)
         )
 
+        Spacer(modifier = Modifier.height(16.dp))
+
+        EmptyCart(
+            icon = Icons.Outlined.ShoppingCart,
+            title = "Product Cart is Empty",
+            description = "Look like you have not added anything to cart. Search product or scan barcode ..."
+        )
+
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        ProductCard(
+            productTitle = "Woman Premium Trouser - Red",
+            sku = "FAS742",
+            stock = "492",
+            price = "500.00",
+            discountedPrice = "467.50",
+            onClick = {},
+            modifier = Modifier.width(800.dp)
+        )
 
     }
 }
