@@ -29,6 +29,7 @@ import com.example.webview.ui.screen.infocardscreen.component.EmptyCart
 import com.example.webview.ui.screen.infocardscreen.components.DetailsCard
 import com.example.webview.ui.screen.infocardscreen.components.InfoCard
 import com.example.webview.ui.screen.infocardscreen.component.InfoCardComponent
+import com.example.webview.ui.screen.infocardscreen.component.NotFoundScreen
 import com.example.webview.ui.screen.infocardscreen.component.ProductCard
 import com.example.webview.ui.screen.infocardscreen.component.SearchCustomer
 import com.example.webview.ui.screen.infocardscreen.component.SubTotalComponent
@@ -39,7 +40,6 @@ import com.example.webview.ui.screen.infocardscreen.components.TextTitle
 @Composable
 fun InfoCardScreen() {
     val textState = rememberSaveable { mutableStateOf("") }
-
 
     Column(
         modifier = Modifier
@@ -197,6 +197,14 @@ fun InfoCardScreen() {
             price = "500.00",
             discountedPrice = "467.50",
             onClick = {},
+            modifier = Modifier.width(800.dp)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        NotFoundScreen(
+            icon = Icons.Outlined.ShoppingCart,
+            title = "404 Not Found",
             modifier = Modifier.width(800.dp)
         )
 

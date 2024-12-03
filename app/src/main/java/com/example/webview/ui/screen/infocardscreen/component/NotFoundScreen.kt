@@ -28,9 +28,10 @@ import com.example.webview.ui.components.PreviewAppScreen
 fun NotFoundScreen(
     icon: ImageVector,
     title: String,
+    modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -57,7 +58,7 @@ fun NotFoundScreen(
 
         Text(
             text = title,
-            style = MaterialTheme.typography.titleSmall.copy(
+            style = MaterialTheme.typography.headlineMedium.copy(
                 fontSize = 20.sp,
                 color = MaterialTheme.colorScheme.onSurface
             )
