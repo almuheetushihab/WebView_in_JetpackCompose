@@ -17,14 +17,15 @@ import com.example.webview.ui.components.PreviewAppScreen
 @Composable
 fun TabRow(
     tabs: List<String>,
-    onTabSelected: (Int) -> Unit
+    onTabSelected: (Int) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     var selectedTabIndex by remember { mutableStateOf(0) }
 
     TabRow(
         selectedTabIndex = selectedTabIndex,
-        modifier = Modifier.fillMaxWidth(),
-        contentColor = Color.Blue,
+        modifier = modifier,
+        contentColor = Color.Black,
         containerColor = Color.Transparent,
         divider = {}
     ) {
@@ -55,6 +56,10 @@ fun TabRow(
 @Composable
 fun TabRowPreview() {
     val tabs = listOf("Contact", "Mailing Address", "Additional Information")
-    TabRow(tabs = tabs) {
-    }
+
+    TabRow(
+        tabs = tabs,
+        onTabSelected = {},
+        modifier = Modifier.fillMaxWidth()
+    )
 }

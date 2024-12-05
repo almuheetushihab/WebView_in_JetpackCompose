@@ -33,6 +33,7 @@ import com.example.webview.ui.screen.infocardscreen.component.NotFoundScreen
 import com.example.webview.ui.screen.infocardscreen.component.ProductCard
 import com.example.webview.ui.screen.infocardscreen.component.SearchCustomer
 import com.example.webview.ui.screen.infocardscreen.component.SubTotalComponent
+import com.example.webview.ui.screen.infocardscreen.component.TabRow
 import com.example.webview.ui.screen.infocardscreen.components.TextArea
 import com.example.webview.ui.screen.infocardscreen.components.TextTitle
 
@@ -205,6 +206,14 @@ fun InfoCardScreen() {
         NotFoundScreen(
             icon = Icons.Outlined.ShoppingCart,
             title = "404 Not Found",
+            modifier = Modifier.width(800.dp)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        TabRow(
+            tabs = listOf("Contact", "Mailing Address", "Additional Information"),
+            onTabSelected = {},
             modifier = Modifier.width(800.dp)
         )
 
