@@ -61,7 +61,7 @@ fun InfoCardScreen() {
         InfoCard(
             title = "Nothing Found",
             firstDescription = "Look like you have not any details about your register.",
-            secondDescription = "Details will appear here when you close your registerrr.",
+            secondDescription = "Details will appear here when you close your register.",
             modifier = Modifier
                 .width(800.dp)
                 .wrapContentHeight(),
