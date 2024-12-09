@@ -80,7 +80,7 @@ fun InfoCardScreen() {
                 .wrapContentHeight(),
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(17.dp))
 
         TextTitle(
             title = "Notes",
