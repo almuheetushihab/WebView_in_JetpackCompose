@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.webview.ui.components.PreviewAppScreen
+import com.example.webview.ui.screen.infocardscreen.component.AddCustomerAdditionalInformation
 import com.example.webview.ui.screen.infocardscreen.component.AddOptionsComponent
 import com.example.webview.ui.screen.infocardscreen.component.ButtonGroupComponent
 import com.example.webview.ui.screen.infocardscreen.component.OpenNewRegisterStatusNotifier
@@ -216,6 +217,11 @@ fun InfoCardScreen() {
             onTabSelected = {},
             modifier = Modifier.width(800.dp)
         )
+
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        AddCustomerAdditionalInformation()
 
     }
 }
