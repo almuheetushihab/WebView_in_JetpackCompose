@@ -83,7 +83,8 @@ fun AddCustomerAdditionalInformation() {
                 Spacer(modifier = Modifier.height(8.dp))
 
                 OutlinedTextField(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth(),
                     value = customerCode,
                     singleLine = true,
                     onValueChange = { customerCode = it },
