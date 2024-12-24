@@ -110,7 +110,7 @@ fun AddCustomerAdditionalInformation() {
 
                 )
 
-                Spacer(modifier = Modifier.height(7.dp))
+                Spacer(modifier = Modifier.height(8.dp))
 
                 OutlinedTextField(
                     modifier = Modifier
