@@ -16,18 +16,18 @@ import com.example.webview.ui.screen.loginscreen.LoginScreen
 @Composable
 fun MainContent() {
     InfoCardScreen()
-//    LoginScreen()
-//    Scaffold(
-//        topBar = {
-//            TopAppBar(
-//                title = { Text("GFG | WebView", color = Color.White) },
-//               colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Blue)) },
-//
-//        content = {
-//            WebViewPage(
-//                url = "https://www.geeksforgeeks.org",
-//                modifier = Modifier.padding(it)
-//            )
-//        }
-//    )
+    LoginScreen()
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("GFG | WebView", color = Color.White) },
+               colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Blue)) },
+
+        content = {
+            WebViewPage(
+                url = "https://www.geeksforgeeks.org",
+                modifier = Modifier.padding(it)
+            )
+        }
+    )
 }
